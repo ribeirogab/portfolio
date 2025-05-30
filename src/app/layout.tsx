@@ -145,13 +145,13 @@ export default function RootLayout({
       'Engenharia de Software',
     ],
     sameAs: [
-      DATA.contact.social.GitHub?.url,
-      DATA.contact.social.LinkedIn?.url,
-      DATA.contact.social.X?.url,
-    ].filter(Boolean),
+      DATA.contact?.social?.GitHub?.url,
+      DATA.contact?.social?.LinkedIn?.url,
+      DATA.contact?.social?.X?.url,
+    ].filter((url): url is string => Boolean(url)),
     contactPoint: {
       '@type': 'ContactPoint',
-      email: DATA.contact.email,
+      email: DATA.contact?.email,
       contactType: 'professional',
     },
   };

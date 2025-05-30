@@ -19,7 +19,7 @@ export function ContactSection() {
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Quer conversar? Basta me enviar uma mensagem no{' '}
               <Link
-                href={DATA.contact.social.linkedin.url}
+                href={DATA.contact.social.LinkedIn.url}
                 className="text-blue-500 hover:underline"
               >
                 LinkedIn
