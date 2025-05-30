@@ -55,7 +55,7 @@ export const DATA: ProfileData = {
       },
       X: {
         name: 'X',
-        url: 'https://x.com/home',
+        url: 'https://x.com/gbr_osr',
         icon: Icons.x,
 
         navbar: true,
