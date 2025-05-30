@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ignore-pattern .next/",
+    "lint:fix": "eslint . --fix --ignore-pattern .next/",
     "knip": "knip",
     "code-quality": "pnpm run knip && pnpm run lint && pnpm run build",
     "sync-agent-rules": "./scripts/sync-agent-rules.sh"
