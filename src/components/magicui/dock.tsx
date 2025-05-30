@@ -6,12 +6,12 @@ import React, { PropsWithChildren, useRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
-export interface DockProps extends VariantProps<typeof dockVariants> {
+export type DockProps = VariantProps<typeof dockVariants> & {
   className?: string;
   magnification?: number;
   distance?: number;
   children: React.ReactNode;
-}
+};
 
 const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
@@ -62,7 +62,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
 Dock.displayName = 'Dock';
 
-export interface DockIconProps {
+export type DockIconProps = {
   size?: number;
   magnification?: number;
   distance?: number;
@@ -70,7 +70,7 @@ export interface DockIconProps {
   className?: string;
   children?: React.ReactNode;
   props?: PropsWithChildren;
-}
+};
 
 const DockIcon = ({
   magnification = DEFAULT_MAGNIFICATION,

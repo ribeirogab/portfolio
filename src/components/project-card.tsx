@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
-interface Props {
+type Props = {
   title: string;
   href?: string;
   description: string;
@@ -27,7 +27,7 @@ interface Props {
     href: string;
   }[];
   className?: string;
-}
+};
 
 export function ProjectCard({
   title,

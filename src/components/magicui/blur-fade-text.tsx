@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 
 import { cn } from '@/lib/utils';
 
-interface BlurFadeTextProps {
+type BlurFadeTextProps = {
   text: string;
   className?: string;
   variant?: {
@@ -17,7 +17,8 @@ interface BlurFadeTextProps {
   delay?: number;
   yOffset?: number;
   animateByCharacter?: boolean;
-}
+};
+
 const BlurFadeText = ({
   text,
   className,

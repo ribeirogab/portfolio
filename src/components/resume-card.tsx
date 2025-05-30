@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
-interface ResumeCardProps {
+type ResumeCardProps = {
   logoUrl: string;
   altText: string;
   title: string;
@@ -24,7 +24,7 @@ interface ResumeCardProps {
     type: string;
     href: string;
   }[];
-}
+};
 
 const LinkContainer = ({
   href,
