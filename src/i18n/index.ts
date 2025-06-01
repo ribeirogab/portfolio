@@ -1,12 +1,15 @@
 import 'server-only';
 
+import { en } from './dictionaries/en';
+import { pt } from './dictionaries/pt';
+
 const dictionaries = {
-  pt: () => import('./dictionaries/pt.json').then((module) => module.default),
-  en: () => import('./dictionaries/en.json').then((module) => module.default),
+  pt: () => Promise.resolve(pt),
+  en: () => Promise.resolve(en),
 } as const;
 
 export type Locale = keyof typeof dictionaries;
-export type Dictionary = Awaited<ReturnType<typeof dictionaries.pt>>;
+export type Dictionary = typeof pt;
 
 export const getDictionary = async (locale: Locale) => {
   if (!(locale in dictionaries)) {

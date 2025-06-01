@@ -1,0 +1,76 @@
+export const pt = {
+  metadata: {
+    title: 'Engenheiro de Software',
+    description:
+      'Explore meu portfólio apresentando experiência profissional e expertise técnica em desenvolvimento de software.',
+    applicationName: 'Portfólio Gabriel Ribeiro',
+    ogTitle: 'Gabriel Ribeiro - Engenheiro de Software',
+    ogDescription: 'Portfólio profissional de Gabriel Ribeiro',
+    twitterTitle: 'Gabriel Ribeiro - Engenheiro de Software',
+    twitterDescription: 'Portfólio profissional de Gabriel Ribeiro',
+  },
+  keywords: [
+    'Gabriel Ribeiro',
+    'Desenvolvedor de Software',
+    'Desenvolvedor Backend',
+    'Desenvolvedor Full Stack',
+    'Node.js',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'AWS',
+    'Portfólio',
+    'Desenvolvimento Web',
+    'Desenvolvimento de Software',
+    'Profissional de Tecnologia',
+    'Programador',
+    'Engenheiro de Software',
+    'JavaScript',
+    'Backend Developer',
+    'Desenvolvedor React',
+    'Desenvolvedor Node.js',
+  ],
+  navigation: {
+    home: 'Início',
+  },
+  hero: {
+    greeting: 'Olá, eu sou',
+    name: 'Gabriel Ribeiro',
+    title: 'Engenheiro de Software',
+    description:
+      'Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios.',
+  },
+  about: {
+    title: 'Sobre',
+  },
+  work: {
+    title: 'Experiência Profissional',
+  },
+  education: {
+    title: 'Educação',
+  },
+  skills: {
+    title: 'Habilidades',
+  },
+  projects: {
+    title: 'Meus Projetos',
+    subtitle: 'Confira meus últimos trabalhos',
+    description:
+      'Trabalhei em uma variedade de projetos, desde sites simples até aplicativos web complexos.',
+  },
+  contact: {
+    title: 'Contato',
+    description:
+      'Vamos nos conectar! Entre em contato comigo através de qualquer uma das plataformas abaixo.',
+    actions: {
+      email: 'Enviar Email',
+      download: 'Baixar Currículo',
+    },
+  },
+  common: {
+    viewMore: 'Ver mais',
+    viewLess: 'Ver menos',
+    present: 'o momento',
+    location: 'Localização',
+  },
+} as const;
