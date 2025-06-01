@@ -2,8 +2,13 @@ import { BlurFade } from '@/components/magicui/blur-fade';
 import { ProjectCard } from '@/components/project-card';
 import { BLUR_FADE_DELAY } from '@/constants';
 import { DATA } from '@/data/resume';
+import type { Dictionary } from '@/i18n';
 
-export function ProjectsSection() {
+type ProjectsSectionProps = {
+  dict: Dictionary;
+};
+
+export function ProjectsSection({ dict }: ProjectsSectionProps) {
   return (
     <section id="projects">
       <div className="w-full space-y-12 py-12">
@@ -11,14 +16,13 @@ export function ProjectsSection() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
-                Meus Projetos
+                {dict.ui.projects.title}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Confira meus últimos trabalhos
+                {dict.ui.projects.subtitle}
               </h2>
               <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Trabalhei em uma variedade de projetos, desde sites simples até
-                aplicativos web complexos.
+                {dict.ui.projects.description}
               </p>
             </div>
           </div>

@@ -4,7 +4,7 @@ const config: KnipConfig = {
   ignore: [
     'src/components/ui/**',
     'src/components/magicui/**',
-    'src/app/_components/projects-section.tsx',
+    'src/app/[lang]/_components/projects-section.tsx',
     'src/components/project-card.tsx',
   ],
   ignoreDependencies: [
