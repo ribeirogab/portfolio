@@ -1,28 +1,55 @@
 'use client';
 
-import { useParams, usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
-import { Button } from '@/components/ui/button';
-import { type Locale } from '@/lib/dictionaries';
+import { type Locale, locales } from '@/i18n/config';
+
+import { Button } from './ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 export function LanguageToggle() {
-  const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
-  const currentLang = params.lang as Locale;
+  const router = useRouter();
 
-  const switchLanguage = () => {
-    const newLang = currentLang === 'pt' ? 'en' : 'pt';
-    const newPathname = pathname.replace(`/${currentLang}`, `/${newLang}`);
-    router.push(newPathname);
+  const currentLang = pathname.split('/')[1] as Locale;
+  const isPortuguese = currentLang === 'pt';
+
+  const handleLanguageSwitch = () => {
+    const segments = pathname.split('/');
+
+    if (locales.includes(segments[1] as Locale)) {
+      segments[1] = isPortuguese ? 'en' : 'pt';
+    } else {
+      segments.unshift('', isPortuguese ? 'en' : 'pt');
+    }
+
+    const newPath = segments.join('/');
+    router.push(newPath);
   };
 
   return (
-    <Button variant="ghost" type="button" size="icon" onClick={switchLanguage}>
-      <span className="text-sm font-medium">
-        {currentLang === 'pt' ? '🇧🇷' : '🇺🇸'}
-      </span>
-      <span className="sr-only">Toggle language</span>
-    </Button>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleLanguageSwitch}
+          aria-label={
+            isPortuguese ? 'Switch to English' : 'Mudar para Português'
+          }
+        >
+          <span
+            className="text-lg"
+            role="img"
+            aria-label={isPortuguese ? 'Brasil' : 'Estados Unidos'}
+          >
+            {isPortuguese ? '🇧🇷' : '🇺🇸'}
+          </span>
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>{isPortuguese ? 'English' : 'Português'}</p>
+      </TooltipContent>
+    </Tooltip>
   );
 }

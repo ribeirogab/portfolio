@@ -2,7 +2,7 @@ import { BlurFade } from '@/components/magicui/blur-fade';
 import { ProjectCard } from '@/components/project-card';
 import { BLUR_FADE_DELAY } from '@/constants';
 import { DATA } from '@/data/resume';
-import { type Dictionary } from '@/lib/dictionaries';
+import { type Dictionary } from '@/i18n';
 
 type ProjectsSectionProps = {
   dict: Dictionary;

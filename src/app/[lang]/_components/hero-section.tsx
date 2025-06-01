@@ -5,7 +5,7 @@ import { AvatarImage } from '@/components/ui/avatar';
 import { Avatar } from '@/components/ui/avatar';
 import { BLUR_FADE_DELAY } from '@/constants';
 import { DATA } from '@/data/resume';
-import { type Dictionary } from '@/lib/dictionaries';
+import { type Dictionary } from '@/i18n';
 
 type HeroSectionProps = {
   dict: Dictionary;

@@ -7,7 +7,7 @@ import Navbar from '@/components/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { DATA } from '@/data/resume';
-import { getDictionary, type Locale, locales } from '@/lib/dictionaries';
+import { getDictionary, type Locale, locales } from '@/i18n';
 import { cn } from '@/lib/utils';
 
 const fontSans = FontSans({
