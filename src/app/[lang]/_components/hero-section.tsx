@@ -5,8 +5,13 @@ import { AvatarImage } from '@/components/ui/avatar';
 import { Avatar } from '@/components/ui/avatar';
 import { BLUR_FADE_DELAY } from '@/constants';
 import { DATA } from '@/data/resume';
+import { type Dictionary } from '@/lib/dictionaries';
 
-export function HeroSection() {
+type HeroSectionProps = {
+  dict: Dictionary;
+};
+
+export function HeroSection({ dict }: HeroSectionProps) {
   return (
     <section id="hero">
       <div className="mx-auto w-full max-w-2xl space-y-8">
@@ -16,12 +21,12 @@ export function HeroSection() {
               delay={BLUR_FADE_DELAY}
               className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               yOffset={8}
-              text={`Olá, sou ${DATA.name.split(' ')[0]} 👋`}
+              text={`${dict.hero.greeting} ${DATA.name.split(' ')[0]} 👋`}
             />
             <BlurFadeText
               className="max-w-[600px] md:text-xl"
               delay={BLUR_FADE_DELAY}
-              text={DATA.description}
+              text={dict.hero.description}
             />
           </div>
           <BlurFade delay={BLUR_FADE_DELAY}>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { LanguageToggle } from '@/components/language-toggle';
 import { Dock, DockIcon } from '@/components/magicui/dock';
 import { ModeToggle } from '@/components/mode-toggle';
 import { buttonVariants } from '@/components/ui/button';
@@ -64,10 +65,24 @@ export default function Navbar() {
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <ModeToggle />
+              <div>
+                <ModeToggle />
+              </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Theme</p>
+              <p>Switch theme</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div>
+                <LanguageToggle />
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Switch language</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>

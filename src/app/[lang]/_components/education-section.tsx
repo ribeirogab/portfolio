@@ -2,13 +2,18 @@ import { BlurFade } from '@/components/magicui/blur-fade';
 import { ResumeCard } from '@/components/resume-card';
 import { BLUR_FADE_DELAY } from '@/constants';
 import { DATA } from '@/data/resume';
+import { type Dictionary } from '@/lib/dictionaries';
 
-export function EducationSection() {
+type EducationSectionProps = {
+  dict: Dictionary;
+};
+
+export function EducationSection({ dict }: EducationSectionProps) {
   return (
     <section id="education">
       <div className="flex min-h-0 flex-col gap-y-3">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
-          <h2 className="text-xl font-bold">Educação</h2>
+          <h2 className="text-xl font-bold">{dict.education.title}</h2>
         </BlurFade>
         {DATA.education.map((education, id) => (
           <BlurFade
