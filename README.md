@@ -2,6 +2,8 @@
 
 Personal portfolio with multi-language support (PT/EN).
 
+**Live site**: [gabrielribeiro.work](https://gabrielribeiro.work/)
+
 ## Getting Started
 
 ```bash
