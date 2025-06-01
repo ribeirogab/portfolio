@@ -1,15 +1,15 @@
 import 'server-only';
 
+import type { Locale } from './config';
 import { en } from './dictionaries/en';
 import { pt } from './dictionaries/pt';
-import { type Dictionary } from './types/dictionary';
+import type { Dictionary } from './types/dictionary';
 
 const dictionaries = {
   pt: () => Promise.resolve(pt),
   en: () => Promise.resolve(en),
 } as const;
 
-export type Locale = keyof typeof dictionaries;
 export type { Dictionary };
 
 export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
@@ -19,6 +19,3 @@ export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
 
   return dictionaries[locale]();
 };
-
-export const locales = Object.keys(dictionaries) as Locale[];
-export const defaultLocale: Locale = 'pt';

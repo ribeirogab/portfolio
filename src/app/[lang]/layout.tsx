@@ -6,8 +6,8 @@ import { Inter as FontSans } from 'next/font/google';
 import Navbar from '@/components/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { DATA } from '@/data/resume';
-import { getDictionary, type Locale, locales } from '@/i18n';
+import { getDictionary } from '@/i18n';
+import { type Locale, locales } from '@/i18n/config';
 import { cn } from '@/lib/utils';
 
 const fontSans = FontSans({
@@ -31,47 +31,47 @@ export async function generateMetadata({
   const ogLocale = lang === 'pt' ? 'pt_BR' : 'en_US';
 
   return {
-    metadataBase: new URL(DATA.url),
+    metadataBase: new URL(dict.resume.url),
     title: {
-      default: `${DATA.name} - ${dict.ui.metadata.title}`,
-      template: `%s | ${DATA.name}`,
+      default: `${dict.resume.name} - ${dict.resume.jobTitle}`,
+      template: `%s | ${dict.resume.name}`,
     },
-    description: dict.ui.metadata.description,
-    applicationName: dict.ui.metadata.applicationName,
+    description: dict.resume.description,
+    applicationName: dict.resume.name,
     authors: [
       {
-        name: DATA.name,
-        url: DATA.url,
+        name: dict.resume.name,
+        url: dict.resume.url,
       },
     ],
-    creator: DATA.name,
-    publisher: DATA.name,
+    creator: dict.resume.name,
+    publisher: dict.resume.name,
     formatDetection: {
       email: false,
       address: false,
       telephone: false,
     },
-    keywords: dict.ui.keywords,
+    keywords: [...dict.resume.skills, dict.resume.jobTitle],
     openGraph: {
       type: 'website',
       locale: ogLocale,
-      url: DATA.url,
-      siteName: dict.ui.metadata.applicationName,
-      title: dict.ui.metadata.ogTitle,
-      description: dict.ui.metadata.ogDescription,
+      url: dict.resume.url,
+      siteName: dict.resume.name,
+      title: dict.resume.name,
+      description: dict.resume.description,
       images: [
         {
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: dict.ui.metadata.applicationName,
+          alt: dict.resume.name,
           type: 'image/png',
         },
         {
           url: '/og-image-square.png',
           width: 1200,
           height: 1200,
-          alt: dict.ui.metadata.applicationName,
+          alt: dict.resume.name,
           type: 'image/png',
         },
       ],
@@ -80,8 +80,8 @@ export async function generateMetadata({
       card: 'summary_large_image',
       site: '@gbr_osr',
       creator: '@gbr_osr',
-      title: dict.ui.metadata.twitterTitle,
-      description: dict.ui.metadata.twitterDescription,
+      title: dict.resume.name,
+      description: dict.resume.description,
       images: ['/og-image.png'],
     },
     robots: {
@@ -98,13 +98,13 @@ export async function generateMetadata({
       },
     },
     alternates: {
-      canonical: DATA.url,
+      canonical: dict.resume.url,
       languages: {
-        'pt-BR': `${DATA.url}/pt`,
-        'en-US': `${DATA.url}/en`,
+        'pt-BR': `${dict.resume.url}/pt`,
+        'en-US': `${dict.resume.url}/en`,
       },
     },
-    category: 'tecnologia',
+    category: 'technology',
     classification: lang === 'pt' ? 'Portfólio Pessoal' : 'Personal Portfolio',
     verification: {
       google: '',
@@ -121,60 +121,30 @@ export default async function RootLayout({
   params: Promise<{ lang: Locale }>;
 }>) {
   const { lang } = await params;
+  const dict = await getDictionary(lang);
 
   // JSON-LD structured data for better SEO
-  const jobTitle =
-    lang === 'pt' ? 'Desenvolvedor de Software' : 'Software Developer';
-  const worksFor =
-    lang === 'pt' ? 'Indústria de Tecnologia' : 'Technology Industry';
-  const knowsAboutPt = [
-    'Desenvolvimento de Software',
-    'Desenvolvimento Backend',
-    'TypeScript',
-    'Node.js',
-    'React',
-    'Next.js',
-    'AWS',
-    'Desenvolvimento Web',
-    'JavaScript',
-    'Programação',
-    'Engenharia de Software',
-  ];
-  const knowsAboutEn = [
-    'Software Development',
-    'Backend Development',
-    'TypeScript',
-    'Node.js',
-    'React',
-    'Next.js',
-    'AWS',
-    'Web Development',
-    'JavaScript',
-    'Programming',
-    'Software Engineering',
-  ];
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: DATA.name,
-    url: DATA.url,
-    image: `${DATA.url}/og-image.png`,
-    description: DATA.description,
-    jobTitle,
+    name: dict.resume.name,
+    url: dict.resume.url,
+    image: `${dict.resume.url}/og-image.png`,
+    description: dict.resume.description,
+    jobTitle: dict.resume.jobTitle,
     worksFor: {
       '@type': 'Organization',
-      name: worksFor,
+      name: dict.resume.work[0].company ?? 'Technology Industry',
     },
-    knowsAbout: lang === 'pt' ? knowsAboutPt : knowsAboutEn,
+    knowsAbout: dict.resume.skills,
     sameAs: [
-      DATA.contact?.social?.GitHub?.url,
-      DATA.contact?.social?.LinkedIn?.url,
-      DATA.contact?.social?.X?.url,
+      dict.resume.contact?.social?.GitHub?.url,
+      dict.resume.contact?.social?.LinkedIn?.url,
+      dict.resume.contact?.social?.X?.url,
     ].filter((url): url is string => Boolean(url)),
     contactPoint: {
       '@type': 'ContactPoint',
-      email: DATA.contact?.email,
+      email: dict.resume.contact?.email,
       contactType: 'professional',
     },
   };
@@ -198,7 +168,7 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             {children}
-            <Navbar />
+            <Navbar dict={dict} />
           </TooltipProvider>
         </ThemeProvider>
       </body>

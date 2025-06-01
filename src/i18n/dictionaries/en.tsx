@@ -1,4 +1,5 @@
 import { HomeIcon } from 'lucide-react';
+import Link from 'next/link';
 
 import { Icons } from '@/components/icons';
 
@@ -7,11 +8,13 @@ import { Dictionary } from '../types/dictionary';
 export const en: Dictionary = {
   resume: {
     name: 'Gabriel Ribeiro',
+    jobTitle: 'Software Engineer',
     initials: 'GR',
     url: 'https://gabrielribeiro.work',
     location: 'Tatuí - SP, Brazil',
     locationLink: 'https://g.co/kgs/sTbLmGm',
-    description: 'Software Engineer',
+    description:
+      'Software Engineer. I write code, launch projects, and automate everything I can.',
     summary:
       'Specialized in backend with experience in designing and building scalable, high-performance systems across different domains. Currently working at Goomer and running a software consultancy since 2025, delivering solutions for simple and complex projects. Experienced with serverless architectures, subscription integrations, and event-driven systems. Enthusiast of automation, AI, and software engineering best practices.',
     avatarUrl: '/me.jpeg',
@@ -257,79 +260,66 @@ export const en: Dictionary = {
     hackathons: [],
   },
   ui: {
-    metadata: {
-      title: 'Software Engineer',
-      description:
-        'Explore my portfolio showcasing professional experience and technical expertise in software development.',
-      applicationName: 'Gabriel Ribeiro Portfolio',
-      ogTitle: 'Gabriel Ribeiro - Software Engineer',
-      ogDescription: "Gabriel Ribeiro's professional portfolio",
-      twitterTitle: 'Gabriel Ribeiro - Software Engineer',
-      twitterDescription: "Gabriel Ribeiro's professional portfolio",
-    },
-    keywords: [
-      'Gabriel Ribeiro',
-      'Software Developer',
-      'Backend Developer',
-      'Full Stack Developer',
-      'Node.js',
-      'TypeScript',
-      'React',
-      'Next.js',
-      'AWS',
-      'Portfolio',
-      'Web Development',
-      'Software Development',
-      'Technology Professional',
-      'Programmer',
-      'Software Engineer',
-      'JavaScript',
-      'Backend Developer',
-      'React Developer',
-      'Node.js Developer',
-    ],
-    navigation: {
-      home: 'Home',
-    },
+    // Sections
     hero: {
       greeting: "Hi, I'm",
-      name: 'Gabriel Ribeiro',
-      title: 'Software Engineer',
-      description:
-        'Specialized in backend with experience in designing and building scalable, high-performance systems across different domains.',
     },
+
     about: {
       title: 'About',
     },
+
     work: {
       title: 'Work Experience',
     },
+
     education: {
       title: 'Education',
     },
+
     skills: {
       title: 'Skills',
     },
+
     projects: {
       title: 'My Projects',
       subtitle: 'Check out my latest work',
       description:
         "I've worked on a variety of projects, from simple websites to complex web applications.",
     },
+
     contact: {
-      title: 'Contact',
-      description:
-        "Let's connect! Feel free to reach out to me through any of the platforms below.",
-      actions: {
-        email: 'Send Email',
-        download: 'Download Resume',
-      },
+      title: 'Get in Touch',
+      badge: 'Contact',
+      description: (dict: Dictionary) => (
+        <>
+          Want to chat? Just send me a message on{' '}
+          <Link
+            href={dict.resume.contact.social.LinkedIn.url}
+            className="text-blue-500 hover:underline"
+          >
+            LinkedIn
+          </Link>{' '}
+          and I'll get back to you as soon as possible. I'm also available via
+          email at{' '}
+          <Link
+            href={`mailto:${dict.resume.contact.email}`}
+            className="text-blue-500 hover:underline"
+          >
+            {dict.resume.contact.email}
+          </Link>
+        </>
+      ),
     },
-    common: {
-      viewMore: 'View more',
-      viewLess: 'View less',
+
+    text: {
+      'view more': 'View more',
+      'view less': 'View less',
       present: 'Present',
       location: 'Location',
+      home: 'Home',
+      'switch language': 'Switch language',
+      'switch theme': 'Switch theme',
     },
   },
 };

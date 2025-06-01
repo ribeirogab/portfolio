@@ -11,9 +11,14 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { DATA } from '@/data/resume';
+import type { Dictionary } from '@/i18n';
 import { cn } from '@/lib/utils';
 
-export default function Navbar() {
+type NavbarProps = {
+  dict: Dictionary;
+};
+
+export default function Navbar({ dict }: NavbarProps) {
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex h-full max-h-14 origin-bottom">
       <div className="fixed inset-x-0 bottom-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -38,8 +43,10 @@ export default function Navbar() {
             </Tooltip>
           </DockIcon>
         ))}
+
         <Separator orientation="vertical" className="h-full" />
-        {Object.entries(DATA.contact.social)
+
+        {Object.entries(dict.resume.contact.social)
           .filter(([, social]) => social.navbar)
           .map(([name, social]) => (
             <DockIcon key={name}>
@@ -70,7 +77,7 @@ export default function Navbar() {
               </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Switch theme</p>
+              <p>{dict.ui.text['switch theme']}</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>
@@ -82,7 +89,7 @@ export default function Navbar() {
               </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Switch language</p>
+              <p>{dict.ui.text['switch language']}</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>

@@ -1,4 +1,5 @@
-import { getDictionary, type Locale } from '@/i18n';
+import { getDictionary } from '@/i18n';
+import type { Locale } from '@/i18n/config';
 
 import { AboutSection } from './_components/about-section';
 import { ContactSection } from './_components/contact-section';

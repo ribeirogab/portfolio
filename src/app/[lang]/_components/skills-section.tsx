@@ -1,8 +1,7 @@
 import { BlurFade } from '@/components/magicui/blur-fade';
 import { Badge } from '@/components/ui/badge';
 import { BLUR_FADE_DELAY } from '@/constants';
-import { DATA } from '@/data/resume';
-import { type Dictionary } from '@/i18n';
+import type { Dictionary } from '@/i18n';
 
 type SkillsSectionProps = {
   dict: Dictionary;
@@ -16,7 +15,7 @@ export function SkillsSection({ dict }: SkillsSectionProps) {
           <h2 className="text-xl font-bold">{dict.ui.skills.title}</h2>
         </BlurFade>
         <div className="flex flex-wrap gap-1">
-          {DATA.skills.map((skill, id) => (
+          {dict.resume.skills.map((skill, id) => (
             <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
               <Badge key={skill}>{skill}</Badge>
             </BlurFade>

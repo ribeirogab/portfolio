@@ -4,8 +4,7 @@ import { AvatarFallback } from '@/components/ui/avatar';
 import { AvatarImage } from '@/components/ui/avatar';
 import { Avatar } from '@/components/ui/avatar';
 import { BLUR_FADE_DELAY } from '@/constants';
-import { DATA } from '@/data/resume';
-import { type Dictionary } from '@/i18n';
+import type { Dictionary } from '@/i18n';
 
 type HeroSectionProps = {
   dict: Dictionary;
@@ -21,18 +20,18 @@ export function HeroSection({ dict }: HeroSectionProps) {
               delay={BLUR_FADE_DELAY}
               className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               yOffset={8}
-              text={`${dict.ui.hero.greeting} ${DATA.name.split(' ')[0]} 👋`}
+              text={`${dict.ui.hero.greeting} ${dict.resume.name.split(' ')[0]} 👋`}
             />
             <BlurFadeText
               className="max-w-[600px] md:text-xl"
               delay={BLUR_FADE_DELAY}
-              text={dict.ui.hero.description}
+              text={dict.resume.description}
             />
           </div>
           <BlurFade delay={BLUR_FADE_DELAY}>
             <Avatar className="size-28 border">
-              <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-              <AvatarFallback>{DATA.initials}</AvatarFallback>
+              <AvatarImage alt={dict.resume.name} src={dict.resume.avatarUrl} />
+              <AvatarFallback>{dict.resume.initials}</AvatarFallback>
             </Avatar>
           </BlurFade>
         </div>

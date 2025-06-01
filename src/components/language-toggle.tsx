@@ -5,7 +5,6 @@ import { usePathname, useRouter } from 'next/navigation';
 import { type Locale, locales } from '@/i18n/config';
 
 import { Button } from './ui/button';
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 export function LanguageToggle() {
   const pathname = usePathname();
@@ -28,28 +27,14 @@ export function LanguageToggle() {
   };
 
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleLanguageSwitch}
-          aria-label={
-            isPortuguese ? 'Switch to English' : 'Mudar para Português'
-          }
-        >
-          <span
-            className="text-lg"
-            role="img"
-            aria-label={isPortuguese ? 'Brasil' : 'Estados Unidos'}
-          >
-            {isPortuguese ? '🇧🇷' : '🇺🇸'}
-          </span>
-        </Button>
-      </TooltipTrigger>
-      <TooltipContent>
-        <p>{isPortuguese ? 'English' : 'Português'}</p>
-      </TooltipContent>
-    </Tooltip>
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={handleLanguageSwitch}
+      aria-label={isPortuguese ? 'Switch to English' : 'Mudar para Português'}
+      className="bg-background/35"
+    >
+      <span className="text-sm">{isPortuguese ? 'pt' : 'en'}</span>
+    </Button>
   );
 }

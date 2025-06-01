@@ -1,4 +1,5 @@
 import { HomeIcon } from 'lucide-react';
+import Link from 'next/link';
 
 import { Icons } from '@/components/icons';
 
@@ -7,11 +8,13 @@ import { Dictionary } from '../types/dictionary';
 export const pt: Dictionary = {
   resume: {
     name: 'Gabriel Ribeiro',
+    jobTitle: 'Engenheiro de Software',
     initials: 'GR',
     url: 'https://gabrielribeiro.work',
     location: 'Tatuí - SP, Brasil',
     locationLink: 'https://g.co/kgs/sTbLmGm',
-    description: 'Engenheiro de Software',
+    description:
+      'Engenheiro de Software. Escrevo código, lanço projetos e automatizo tudo que posso.',
     summary:
       'Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios. Atuo atualmente na Goomer e tenho uma consultoria de software desde 2025, entregando soluções para projetos simples e complexos. Tenho vivência com arquiteturas serverless, integrações de assinatura e sistemas orientados a eventos. Sou entusiasta de automações, IA e boas práticas de engenharia de software.',
     avatarUrl: '/me.jpeg',
@@ -93,6 +96,11 @@ export const pt: Dictionary = {
             href: 'https://github.com/goomerdev',
             icon: <Icons.github className="size-3" />,
           },
+          {
+            type: 'Instagram',
+            href: 'https://www.instagram.com/goomer_br/',
+            icon: <Icons.instagram className="size-3" />,
+          },
         ],
         description: (
           <div className="flex flex-col gap-2">
@@ -129,7 +137,13 @@ export const pt: Dictionary = {
         logoUrl: '/zunix.png',
         start: 'jan de 2025',
         end: 'o momento',
-        links: [],
+        links: [
+          {
+            type: 'Instagram',
+            href: 'https://www.instagram.com/zunix.com.br',
+            icon: <Icons.instagram className="size-3" />,
+          },
+        ],
         description: (
           <div className="flex flex-col gap-2">
             <p>
@@ -259,79 +273,65 @@ export const pt: Dictionary = {
     hackathons: [],
   },
   ui: {
-    metadata: {
-      title: 'Engenheiro de Software',
-      description:
-        'Explore meu portfólio apresentando experiência profissional e expertise técnica em desenvolvimento de software.',
-      applicationName: 'Portfólio Gabriel Ribeiro',
-      ogTitle: 'Gabriel Ribeiro - Engenheiro de Software',
-      ogDescription: 'Portfólio profissional de Gabriel Ribeiro',
-      twitterTitle: 'Gabriel Ribeiro - Engenheiro de Software',
-      twitterDescription: 'Portfólio profissional de Gabriel Ribeiro',
-    },
-    keywords: [
-      'Gabriel Ribeiro',
-      'Desenvolvedor de Software',
-      'Desenvolvedor Backend',
-      'Desenvolvedor Full Stack',
-      'Node.js',
-      'TypeScript',
-      'React',
-      'Next.js',
-      'AWS',
-      'Portfólio',
-      'Desenvolvimento Web',
-      'Desenvolvimento de Software',
-      'Profissional de Tecnologia',
-      'Programador',
-      'Engenheiro de Software',
-      'JavaScript',
-      'Backend Developer',
-      'Desenvolvedor React',
-      'Desenvolvedor Node.js',
-    ],
-    navigation: {
-      home: 'Início',
-    },
+    // Sections
     hero: {
-      greeting: 'Olá, eu sou',
-      name: 'Gabriel Ribeiro',
-      title: 'Engenheiro de Software',
-      description:
-        'Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios.',
+      greeting: 'Olá, sou',
     },
+
     about: {
       title: 'Sobre',
     },
+
     work: {
       title: 'Experiência Profissional',
     },
+
     education: {
       title: 'Educação',
     },
+
     skills: {
       title: 'Habilidades',
     },
+
     projects: {
       title: 'Meus Projetos',
       subtitle: 'Confira meus últimos trabalhos',
       description:
         'Trabalhei em uma variedade de projetos, desde sites simples até aplicativos web complexos.',
     },
+
     contact: {
-      title: 'Contato',
-      description:
-        'Vamos nos conectar! Entre em contato comigo através de qualquer uma das plataformas abaixo.',
-      actions: {
-        email: 'Enviar Email',
-        download: 'Baixar Currículo',
-      },
+      title: 'Entre em Contato',
+      badge: 'Contato',
+      description: (dict: Dictionary) => (
+        <>
+          Quer conversar? Basta me enviar uma mensagem no{' '}
+          <Link
+            href={dict.resume.contact.social.LinkedIn.url}
+            className="text-blue-500 hover:underline"
+          >
+            LinkedIn
+          </Link>{' '}
+          e eu responderei assim que puder. Também estou disponível no e-mail{' '}
+          <Link
+            href={`mailto:${dict.resume.contact.email}`}
+            className="text-blue-500 hover:underline"
+          >
+            {dict.resume.contact.email}
+          </Link>
+        </>
+      ),
     },
-    common: {
-      viewMore: 'Ver mais',
-      viewLess: 'Ver menos',
+
+    text: {
+      'view more': 'Ver mais',
+      'view less': 'Ver menos',
       present: 'o momento',
       location: 'Localização',
+      home: 'Home',
+      'switch language': 'Mudar idioma',
+      'switch theme': 'Mudar tema',
     },
   },
 };

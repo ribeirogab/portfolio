@@ -1,8 +1,7 @@
 import { BlurFade } from '@/components/magicui/blur-fade';
 import { ResumeCard } from '@/components/resume-card';
 import { BLUR_FADE_DELAY } from '@/constants';
-import { DATA } from '@/data/resume';
-import { type Dictionary } from '@/i18n';
+import type { Dictionary } from '@/i18n';
 
 type WorkSectionProps = {
   dict: Dictionary;
@@ -15,7 +14,7 @@ export function WorkSection({ dict }: WorkSectionProps) {
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
           <h2 className="text-xl font-bold">{dict.ui.work.title}</h2>
         </BlurFade>
-        {DATA.work.map((work, id) => (
+        {dict.resume.work.map((work, id) => (
           <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
             <ResumeCard
               key={work.company}
@@ -25,7 +24,7 @@ export function WorkSection({ dict }: WorkSectionProps) {
               subtitle={work.title}
               href={work.href}
               badges={work.badges}
-              period={`${work.start} - ${work.end ?? dict.ui.common.present}`}
+              period={`${work.start} - ${work.end ?? dict.ui.text.present}`}
               description={work.description}
               links={work.links}
             />

@@ -79,6 +79,7 @@ type Hackathon = {
 
 export type ResumeDict = {
   name: string;
+  jobTitle: string;
   initials: string;
   url: string;
   location: string;
