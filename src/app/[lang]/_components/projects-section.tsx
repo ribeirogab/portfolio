@@ -1,7 +1,6 @@
 import { BlurFade } from '@/components/magicui/blur-fade';
 import { ProjectCard } from '@/components/project-card';
 import { BLUR_FADE_DELAY } from '@/constants';
-import { DATA } from '@/data/resume';
 import type { Dictionary } from '@/i18n';
 
 type ProjectsSectionProps = {
@@ -28,7 +27,7 @@ export function ProjectsSection({ dict }: ProjectsSectionProps) {
           </div>
         </BlurFade>
         <div className="mx-auto grid max-w-[800px] grid-cols-1 gap-3 sm:grid-cols-2">
-          {DATA.projects.map((project, id) => (
+          {dict.resume.projects.map((project, id) => (
             <BlurFade
               key={project.title}
               delay={BLUR_FADE_DELAY * 12 + id * 0.05}
