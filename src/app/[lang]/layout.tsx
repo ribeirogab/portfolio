@@ -33,11 +33,11 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(DATA.url),
     title: {
-      default: `${DATA.name} - ${dict.metadata.title}`,
+      default: `${DATA.name} - ${dict.ui.metadata.title}`,
       template: `%s | ${DATA.name}`,
     },
-    description: dict.metadata.description,
-    applicationName: dict.metadata.applicationName,
+    description: dict.ui.metadata.description,
+    applicationName: dict.ui.metadata.applicationName,
     authors: [
       {
         name: DATA.name,
@@ -51,27 +51,27 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    keywords: dict.keywords,
+    keywords: dict.ui.keywords,
     openGraph: {
       type: 'website',
       locale: ogLocale,
       url: DATA.url,
-      siteName: dict.metadata.applicationName,
-      title: dict.metadata.ogTitle,
-      description: dict.metadata.ogDescription,
+      siteName: dict.ui.metadata.applicationName,
+      title: dict.ui.metadata.ogTitle,
+      description: dict.ui.metadata.ogDescription,
       images: [
         {
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: dict.metadata.applicationName,
+          alt: dict.ui.metadata.applicationName,
           type: 'image/png',
         },
         {
           url: '/og-image-square.png',
           width: 1200,
           height: 1200,
-          alt: dict.metadata.applicationName,
+          alt: dict.ui.metadata.applicationName,
           type: 'image/png',
         },
       ],
@@ -80,8 +80,8 @@ export async function generateMetadata({
       card: 'summary_large_image',
       site: '@gbr_osr',
       creator: '@gbr_osr',
-      title: dict.metadata.twitterTitle,
-      description: dict.metadata.twitterDescription,
+      title: dict.ui.metadata.twitterTitle,
+      description: dict.ui.metadata.twitterDescription,
       images: ['/og-image.png'],
     },
     robots: {

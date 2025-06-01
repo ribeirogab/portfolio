@@ -21,12 +21,12 @@ export function HeroSection({ dict }: HeroSectionProps) {
               delay={BLUR_FADE_DELAY}
               className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               yOffset={8}
-              text={`${dict.hero.greeting} ${DATA.name.split(' ')[0]} 👋`}
+              text={`${dict.ui.hero.greeting} ${DATA.name.split(' ')[0]} 👋`}
             />
             <BlurFadeText
               className="max-w-[600px] md:text-xl"
               delay={BLUR_FADE_DELAY}
-              text={dict.hero.description}
+              text={dict.ui.hero.description}
             />
           </div>
           <BlurFade delay={BLUR_FADE_DELAY}>

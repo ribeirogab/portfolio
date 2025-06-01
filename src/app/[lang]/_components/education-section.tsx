@@ -13,7 +13,7 @@ export function EducationSection({ dict }: EducationSectionProps) {
     <section id="education">
       <div className="flex min-h-0 flex-col gap-y-3">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
-          <h2 className="text-xl font-bold">{dict.education.title}</h2>
+          <h2 className="text-xl font-bold">{dict.ui.education.title}</h2>
         </BlurFade>
         {DATA.education.map((education, id) => (
           <BlurFade
