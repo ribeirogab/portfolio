@@ -15,6 +15,24 @@ pnpm dev
 pnpm build
 ```
 
+## Stack
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui** + **Magic UI**
+- **Framer Motion**
+
+## Structure
+
+```plaintext
+src/
+├── app/[lang]/          # Pages with language support
+├── components/          # Reusable components
+├── i18n/               # Internationalization system
+└── data/               # Static data
+```
+
 ## Internationalization
 
 - **Languages**: Portuguese (pt) and English (en)
@@ -41,30 +59,6 @@ Each dictionary has two sections:
 
 - **`resume`**: Personal data (experience, projects, etc.)
 - **`ui`**: Interface texts (titles, buttons, etc.)
-
-## Stack
-
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **shadcn/ui** + **Magic UI**
-- **Framer Motion**
-
-## Structure
-
-```plaintext
-src/
-├── app/[lang]/          # Pages with language support
-├── components/          # Reusable components
-├── i18n/               # Internationalization system
-└── data/               # Static data
-```
-
-## Scripts
-
-- `pnpm dev` - Development
-- `pnpm build` - Build
-- `pnpm lint` - Linting
 
 ## Credits
 
