@@ -36,7 +36,7 @@ export const en: Dictionary = {
     ],
     navbar: [{ href: '/', icon: HomeIcon, label: 'Home' }],
     contact: {
-      email: 'ribeirogab.dev@gmail.com',
+      email: 'ribeirogab.work@gmail.com',
       tel: '+5515991164345',
       social: {
         GitHub: {
