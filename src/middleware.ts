@@ -5,6 +5,11 @@ import { getLocale, hasLocaleInPathname } from './i18n/locale-detector';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Skip static files that should not be redirected
+  if (['/robots.txt', '/sitemap.xml'].includes(pathname)) {
+    return;
+  }
+
   // Check if there is any supported locale in the pathname
   const pathnameHasLocale = hasLocaleInPathname(pathname);
 
