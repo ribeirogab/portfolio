@@ -1,5 +1,6 @@
 import '../globals.css';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 
@@ -172,6 +173,8 @@ export default async function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
       </body>
+
+      <GoogleAnalytics gaId="G-VC1EG032LG" />
     </html>
   );
 }
