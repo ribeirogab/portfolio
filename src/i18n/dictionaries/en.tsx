@@ -296,7 +296,7 @@ export const en: Dictionary = {
           Want to chat? Just send me a message on{' '}
           <Link
             href={dict.resume.contact.social.LinkedIn.url}
-            className="text-blue-500 hover:underline"
+            className="accessible-link hover:no-underline"
           >
             LinkedIn
           </Link>{' '}
@@ -304,7 +304,7 @@ export const en: Dictionary = {
           email at{' '}
           <Link
             href={`mailto:${dict.resume.contact.email}`}
-            className="text-blue-500 hover:underline"
+            className="accessible-link hover:no-underline"
           >
             {dict.resume.contact.email}
           </Link>

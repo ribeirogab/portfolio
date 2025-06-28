@@ -27,12 +27,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+  const urlWithLocale = `${dict.resume.url}/${lang}`;
 
   // Set the locale for OpenGraph
   const ogLocale = lang === 'pt' ? 'pt_BR' : 'en_US';
 
   return {
-    metadataBase: new URL(dict.resume.url),
+    metadataBase: new URL(urlWithLocale),
     title: {
       default: `${dict.resume.name} - ${dict.resume.jobTitle}`,
       template: `%s | ${dict.resume.name}`,
@@ -42,7 +43,7 @@ export async function generateMetadata({
     authors: [
       {
         name: dict.resume.name,
-        url: dict.resume.url,
+        url: urlWithLocale,
       },
     ],
     creator: dict.resume.name,
@@ -56,10 +57,10 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       locale: ogLocale,
-      url: dict.resume.url,
       siteName: dict.resume.name,
       title: dict.resume.name,
       description: dict.resume.description,
+      url: urlWithLocale,
       images: [
         {
           url: '/og-image.png',
@@ -99,7 +100,7 @@ export async function generateMetadata({
       },
     },
     alternates: {
-      canonical: dict.resume.url,
+      canonical: urlWithLocale,
       languages: {
         'pt-BR': `${dict.resume.url}/pt`,
         'en-US': `${dict.resume.url}/en`,
@@ -123,14 +124,15 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+  const urlWithLocale = `${dict.resume.url}/${lang}`;
 
   // JSON-LD structured data for better SEO
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: dict.resume.name,
-    url: dict.resume.url,
-    image: `${dict.resume.url}/og-image.png`,
+    url: urlWithLocale,
+    image: `${urlWithLocale}/og-image.png`,
     description: dict.resume.description,
     jobTitle: dict.resume.jobTitle,
     worksFor: {

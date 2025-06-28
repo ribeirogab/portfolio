@@ -33,7 +33,7 @@ export default function Navbar({ dict }: NavbarProps) {
                   href={item.href}
                   className={cn(
                     buttonVariants({ variant: 'ghost', size: 'icon' }),
-                    'size-12',
+                    'size-12 text-accent-foreground',
                   )}
                 >
                   <item.icon className="size-4" />
@@ -58,7 +58,7 @@ export default function Navbar({ dict }: NavbarProps) {
                     href={social.url}
                     className={cn(
                       buttonVariants({ variant: 'ghost', size: 'icon' }),
-                      'size-12',
+                      'size-12 text-accent-foreground',
                     )}
                   >
                     <social.icon className="size-4" />

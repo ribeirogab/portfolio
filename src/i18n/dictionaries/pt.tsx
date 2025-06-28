@@ -309,14 +309,14 @@ export const pt: Dictionary = {
           Quer conversar? Basta me enviar uma mensagem no{' '}
           <Link
             href={dict.resume.contact.social.LinkedIn.url}
-            className="text-blue-500 hover:underline"
+            className="accessible-link"
           >
             LinkedIn
           </Link>{' '}
           e eu responderei assim que puder. Também estou disponível no e-mail{' '}
           <Link
             href={`mailto:${dict.resume.contact.email}`}
-            className="text-blue-500 hover:underline"
+            className="accessible-link"
           >
             {dict.resume.contact.email}
           </Link>
