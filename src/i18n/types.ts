@@ -51,6 +51,9 @@ export type Dictionary = {
       badge: string;
       title: string;
       description: string;
+      viewAll: string;
+      pageTitle: string;
+      pageDescription: string;
     };
     contact: {
       badge: string;

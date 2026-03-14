@@ -148,7 +148,7 @@ export default async function Page({
       </section>
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <ProjectsSection dict={dict} />
+          <ProjectsSection dict={dict} locale={locale} />
         </BlurFade>
       </section>
       <section id="contact" className="mt-10">

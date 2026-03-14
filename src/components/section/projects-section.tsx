@@ -1,10 +1,22 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import type { Dictionary } from "@/i18n/types";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
+const MAX_PROJECTS_HOME = 4;
 
-export default function ProjectsSection({ dict }: { dict: Dictionary }) {
+export default function ProjectsSection({
+  dict,
+  locale,
+}: {
+  dict: Dictionary;
+  locale: string;
+}) {
+  const projects = dict.resume.projects.slice(0, MAX_PROJECTS_HOME);
+  const hasMore = dict.resume.projects.length > MAX_PROJECTS_HOME;
+
   return (
     <section id="projects">
       <div className="flex min-h-0 flex-col gap-y-8">
@@ -28,7 +40,7 @@ export default function ProjectsSection({ dict }: { dict: Dictionary }) {
           </div>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto auto-rows-fr">
-          {dict.resume.projects.map((project, id) => (
+          {projects.map((project, id) => (
             <BlurFade
               key={project.title}
               delay={BLUR_FADE_DELAY * 12 + id * 0.05}
@@ -47,6 +59,19 @@ export default function ProjectsSection({ dict }: { dict: Dictionary }) {
             </BlurFade>
           ))}
         </div>
+        {hasMore && (
+          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+            <div className="flex justify-center">
+              <Link
+                href={`/${locale}/projects`}
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+              >
+                {dict.ui.projects.viewAll}
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </BlurFade>
+        )}
       </div>
     </section>
   );

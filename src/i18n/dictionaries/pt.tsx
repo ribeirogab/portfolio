@@ -144,6 +144,9 @@ const pt: Dictionary = {
       badge: "Meus Projetos",
       title: "Confira meus últimos trabalhos",
       description: "Trabalhei em uma variedade de projetos, desde sites simples até aplicações web complexas. Aqui estão alguns dos meus favoritos.",
+      viewAll: "Ver todos os projetos",
+      pageTitle: "Projetos",
+      pageDescription: "Uma coleção de projetos em que trabalhei.",
     },
     contact: {
       badge: "Contato",
