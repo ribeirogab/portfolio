@@ -185,7 +185,7 @@ const pt: Dictionary = {
     contact: {
       badge: "Contato",
       title: "Entre em Contato",
-      description: "Quer conversar? Me mande uma mensagem no X/Twitter e responderei assim que puder.",
+      description: "Quer conversar? Me envie um email e responderei assim que puder.",
     },
     blog: {
       title: "Blog",

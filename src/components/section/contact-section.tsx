@@ -29,12 +29,10 @@ export default function ContactSection({ dict }: { dict: Dictionary }) {
         <p className="mx-auto max-w-lg text-muted-foreground text-balance">
           {dict.ui.contact.description}{" "}
           <Link
-            href={DATA.contact.social.X.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:g@gabrielribeiro.work"
             className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
           >
-            @{DATA.contact.social.X.url.split("/").pop()}
+            g@gabrielribeiro.work
           </Link>
         </p>
       </div>

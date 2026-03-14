@@ -185,7 +185,7 @@ const en: Dictionary = {
     contact: {
       badge: "Contact",
       title: "Get in Touch",
-      description: "Want to chat? Just shoot me a message on X/Twitter and I'll respond whenever I can.",
+      description: "Want to chat? Send me an email and I'll respond whenever I can.",
     },
     blog: {
       title: "Blog",

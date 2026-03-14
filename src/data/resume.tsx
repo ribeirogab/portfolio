@@ -27,7 +27,7 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "ribeirogab.work@gmail.com",
+    email: "g@gabrielribeiro.work",
     tel: "+5515991164345",
     social: {
       GitHub: {
