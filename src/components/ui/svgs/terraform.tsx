@@ -2,7 +2,10 @@ import type { SVGProps } from "react";
 
 const Terraform = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 24 24" fill="#844FBA">
-    <path d="M14.4566 10.456V5.154l4.4568 2.576v5.302zm-4.9534 2.86V8.016l4.4567 2.576v5.3zM4.5467 5.153l4.4567 2.576v5.3L4.5467 10.455zm9.9099-.528L10.0 2.049v5.302l4.4567 2.576z" />
+    <path d="M1.44 0v7.575l6.561 3.79V3.787z" />
+    <path d="M21.12 4.227l-6.561 3.791v7.574l6.56-3.787z" />
+    <path d="M8.72 4.23v7.575l6.561 3.787V8.018z" />
+    <path d="M8.72 12.635v7.575L15.28 24v-7.578z" />
   </svg>
 );
 
