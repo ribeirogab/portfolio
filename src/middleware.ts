@@ -1,32 +1,52 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from "next/server";
+import { locales, defaultLocale, type Locale } from "@/i18n/config";
 
-import { getLocale, hasLocaleInPathname } from './i18n/locale-detector';
+function getPreferredLocale(request: NextRequest): Locale {
+  const acceptLanguage = request.headers.get("accept-language");
+  if (!acceptLanguage) return defaultLocale;
+
+  const preferred = acceptLanguage
+    .split(",")
+    .map((lang) => lang.split(";")[0].trim().substring(0, 2).toLowerCase())
+    .find((lang) => locales.includes(lang as Locale));
+
+  return (preferred as Locale) ?? defaultLocale;
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip static files that should not be redirected
-  if (['/robots.txt', '/sitemap.xml'].includes(pathname)) {
+  // Skip static files and API routes
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.includes(".") // static files like .ico, .png, etc.
+  ) {
     return;
   }
 
-  // Check if there is any supported locale in the pathname
-  const pathnameHasLocale = hasLocaleInPathname(pathname);
+  // Check if pathname already has a locale
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
 
   if (pathnameHasLocale) return;
 
-  // Redirect if there is no locale
-  const locale = getLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
+  // Check cookie for saved preference
+  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value as
+    | Locale
+    | undefined;
+  const locale =
+    cookieLocale && locales.includes(cookieLocale)
+      ? cookieLocale
+      : getPreferredLocale(request);
 
-  return NextResponse.redirect(request.nextUrl);
+  const newUrl = new URL(`/${locale}${pathname}`, request.url);
+  newUrl.search = request.nextUrl.search;
+
+  return NextResponse.redirect(newUrl);
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Always run for API routes
-    '/(api|trpc)(.*)',
-  ],
+  matcher: ["/((?!_next|api|.*\\..*).*)"],
 };
