@@ -24,6 +24,16 @@ export const DATA = {
   location: "Tatuí - SP, Brazil",
   locationLink: "https://g.co/kgs/sTbLmGm",
   avatarUrl: "/me.jpeg",
+  gallery: [
+    { src: "/gallery/photo1.jpg", alt: "Photo 1" },
+    { src: "/gallery/photo2.jpg", alt: "Photo 2" },
+    { src: "/gallery/photo3.jpg", alt: "Photo 3" },
+    { src: "/gallery/photo4.jpg", alt: "Photo 4" },
+    { src: "/gallery/photo5.jpg", alt: "Photo 5" },
+    { src: "/gallery/photo6.jpg", alt: "Photo 6" },
+    { src: "/gallery/photo7.jpg", alt: "Photo 7" },
+    { src: "/gallery/photo8.jpg", alt: "Photo 8" },
+  ],
   skills: [
     { name: "Node.js", icon: Nodejs },
     { name: "TypeScript", icon: Typescript },

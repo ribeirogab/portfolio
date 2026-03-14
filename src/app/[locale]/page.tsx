@@ -61,6 +61,24 @@ export default async function Page({
           </BlurFade>
         </div>
       </section>
+      {DATA.gallery.length > 0 && (
+        <section id="photos">
+          <div className="columns-2 gap-4 sm:columns-3">
+            {DATA.gallery.map((photo, id) => (
+              <BlurFade
+                key={photo.src + id}
+                delay={BLUR_FADE_DELAY * 5 + id * 0.05}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="mb-4 w-full rounded-lg object-cover"
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </section>
+      )}
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
