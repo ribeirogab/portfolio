@@ -80,6 +80,8 @@ export default async function LocaleLayout({
 }>) {
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
+  const dict = await getDictionary(locale);
+  const hasProjects = dict.resume.projects.length > 0;
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -107,7 +109,7 @@ export default async function LocaleLayout({
             <div className="relative z-10 max-w-2xl mx-auto py-12 pb-24 sm:py-24 px-6">
               {children}
             </div>
-            <Navbar locale={locale} />
+            <Navbar locale={locale} hasProjects={hasProjects} />
           </TooltipProvider>
         </ThemeProvider>
       </body>

@@ -1,4 +1,3 @@
-import { Icons } from "@/components/icons";
 import type { Dictionary } from "../types";
 
 const en: Dictionary = {
@@ -83,56 +82,7 @@ const en: Dictionary = {
         end: "Jul 2019",
       },
     ],
-    projects: [
-      {
-        title: "Event-Driven Notification Service",
-        href: "https://github.com/ribeirogab/notification-service",
-        dates: "Jan 2025 - Present",
-        active: true,
-        description:
-          "A scalable event-driven notification service built with serverless architecture. Supports email, SMS, and push notifications with retry mechanisms and delivery tracking.",
-        technologies: ["Node.js", "TypeScript", "AWS Lambda", "SQS", "DynamoDB", "Serverless Framework"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/notification-service", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-      {
-        title: "Subscription Management API",
-        href: "https://github.com/ribeirogab/subscription-api",
-        dates: "Sep 2024 - Dec 2024",
-        active: true,
-        description:
-          "REST API for managing SaaS subscriptions with Stripe integration, webhook handling, and automated billing workflows. Built with clean architecture principles.",
-        technologies: ["Node.js", "TypeScript", "NestJS", "PostgreSQL", "Stripe", "Docker"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/subscription-api", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-      {
-        title: "AI Chat Assistant",
-        href: "https://github.com/ribeirogab/ai-chat",
-        dates: "Jun 2024 - Aug 2024",
-        active: true,
-        description:
-          "An AI-powered chat assistant with context-aware conversations, document ingestion, and real-time streaming responses. Built as a full-stack application.",
-        technologies: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "TailwindCSS", "Shadcn UI"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/ai-chat", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-      {
-        title: "Task Automation CLI",
-        href: "https://github.com/ribeirogab/task-cli",
-        dates: "Mar 2024 - May 2024",
-        active: false,
-        description:
-          "A CLI tool for automating repetitive development tasks like project scaffolding, database migrations, and deployment pipelines. Designed with extensible plugin architecture.",
-        technologies: ["Node.js", "TypeScript", "Commander.js", "Docker", "AWS"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/task-cli", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-    ],
+    projects: [],
   },
   ui: {
     hero: { greeting: "Hi, I'm" },

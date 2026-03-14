@@ -1,4 +1,3 @@
-import { Icons } from "@/components/icons";
 import type { Dictionary } from "../types";
 
 const pt: Dictionary = {
@@ -83,56 +82,7 @@ const pt: Dictionary = {
         end: "jul de 2019",
       },
     ],
-    projects: [
-      {
-        title: "Event-Driven Notification Service",
-        href: "https://github.com/ribeirogab/notification-service",
-        dates: "Jan 2025 - Presente",
-        active: true,
-        description:
-          "Serviço de notificações event-driven escalável com arquitetura serverless. Suporta email, SMS e push notifications com mecanismos de retry e rastreamento de entrega.",
-        technologies: ["Node.js", "TypeScript", "AWS Lambda", "SQS", "DynamoDB", "Serverless Framework"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/notification-service", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-      {
-        title: "Subscription Management API",
-        href: "https://github.com/ribeirogab/subscription-api",
-        dates: "Set 2024 - Dez 2024",
-        active: true,
-        description:
-          "API REST para gerenciamento de assinaturas SaaS com integração Stripe, tratamento de webhooks e fluxos de cobrança automatizados. Construída com princípios de clean architecture.",
-        technologies: ["Node.js", "TypeScript", "NestJS", "PostgreSQL", "Stripe", "Docker"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/subscription-api", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-      {
-        title: "AI Chat Assistant",
-        href: "https://github.com/ribeirogab/ai-chat",
-        dates: "Jun 2024 - Ago 2024",
-        active: true,
-        description:
-          "Assistente de chat com IA com conversas contextuais, ingestão de documentos e respostas em tempo real via streaming. Construído como aplicação full-stack.",
-        technologies: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "TailwindCSS", "Shadcn UI"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/ai-chat", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-      {
-        title: "Task Automation CLI",
-        href: "https://github.com/ribeirogab/task-cli",
-        dates: "Mar 2024 - Mai 2024",
-        active: false,
-        description:
-          "Ferramenta CLI para automatizar tarefas repetitivas de desenvolvimento como scaffolding de projetos, migrações de banco de dados e pipelines de deploy. Projetada com arquitetura de plugins extensível.",
-        technologies: ["Node.js", "TypeScript", "Commander.js", "Docker", "AWS"],
-        links: [{ type: "Source", href: "https://github.com/ribeirogab/task-cli", icon: <Icons.github className="size-3" /> }],
-        image: "",
-        video: "",
-      },
-    ],
+    projects: [],
   },
   ui: {
     hero: { greeting: "Olá, sou" },
