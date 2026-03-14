@@ -23,11 +23,11 @@ export default async function Page({
   const dict = await getDictionary(locale);
 
   return (
-    <main className="min-h-dvh flex flex-col gap-5 relative">
+    <main className="min-h-dvh flex flex-col gap-14 relative">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
-            <div className="gap-2 flex flex-col order-2 md:order-1">
+          <div className="gap-4 flex flex-row justify-between items-center">
+            <div className="gap-2 flex flex-col flex-1 min-w-0">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
@@ -40,8 +40,8 @@ export default async function Page({
                 text={dict.resume.description}
               />
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
+            <BlurFade delay={BLUR_FADE_DELAY} className="flex-none">
+              <Avatar className="size-20 sm:size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
