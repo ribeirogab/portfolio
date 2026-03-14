@@ -49,7 +49,7 @@ export default async function Page({
           </div>
         </div>
       </section>
-      <section id="about">
+      <section id="about" className="-mt-6">
         <div className="flex min-h-0 flex-col gap-y-1">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <h2 className="text-xl font-bold">{dict.ui.about.title}</h2>
@@ -62,7 +62,7 @@ export default async function Page({
         </div>
       </section>
       {DATA.gallery.length > 0 && (
-        <section id="photos">
+        <section id="photos" className="-mt-6">
           <div className="columns-2 gap-4 sm:columns-3">
             {DATA.gallery.map((photo, id) => (
               <BlurFade
