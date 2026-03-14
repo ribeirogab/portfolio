@@ -153,17 +153,6 @@ const pt: Dictionary = {
       title: "Entre em Contato",
       description: "Quer conversar? Me envie um email e responderei assim que puder.",
     },
-    blog: {
-      title: "Blog",
-      description: "Meus pensamentos sobre desenvolvimento de software, vida e mais.",
-      noPosts: "Nenhum post ainda. Volte em breve!",
-      page: "Página",
-      of: "de",
-      previous: "Anterior",
-      next: "Próximo",
-      backToBlog: "Voltar ao Blog",
-      posts: "posts",
-    },
     notFound: {
       title: "Página Não Encontrada",
       description: "A página que você está procurando não existe ou pode ter sido movida.",

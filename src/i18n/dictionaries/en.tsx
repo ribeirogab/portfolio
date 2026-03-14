@@ -153,17 +153,6 @@ const en: Dictionary = {
       title: "Get in Touch",
       description: "Want to chat? Send me an email and I'll respond whenever I can.",
     },
-    blog: {
-      title: "Blog",
-      description: "My thoughts on software development, life, and more.",
-      noPosts: "No blog posts yet. Check back soon!",
-      page: "Page",
-      of: "of",
-      previous: "Previous",
-      next: "Next",
-      backToBlog: "Back to Blog",
-      posts: "posts",
-    },
     notFound: {
       title: "Page Not Found",
       description: "The page you're looking for doesn't exist or may have been moved.",

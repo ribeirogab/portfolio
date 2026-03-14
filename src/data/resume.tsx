@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon, CodeXml } from "lucide-react";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Typescript } from "@/components/ui/svgs/typescript";
 import { Aws } from "@/components/ui/svgs/aws";
@@ -44,7 +44,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/projects", icon: CodeXml, label: "Projects" },
   ],
   contact: {
     email: "g@gabrielribeiro.work",

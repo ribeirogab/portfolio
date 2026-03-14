@@ -60,17 +60,6 @@ export type Dictionary = {
       title: string;
       description: string;
     };
-    blog: {
-      title: string;
-      description: string;
-      noPosts: string;
-      page: string;
-      of: string;
-      previous: string;
-      next: string;
-      backToBlog: string;
-      posts: string;
-    };
     notFound: {
       title: string;
       description: string;
