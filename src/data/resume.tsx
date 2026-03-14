@@ -1,11 +1,21 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import { Nodejs } from "@/components/ui/svgs/nodejs";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { Aws } from "@/components/ui/svgs/aws";
+import { Cloudflare } from "@/components/ui/svgs/cloudflare";
+import { Docker } from "@/components/ui/svgs/docker";
+import { Terraform } from "@/components/ui/svgs/terraform";
+import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { Mysql } from "@/components/ui/svgs/mysql";
+import { Mongodb } from "@/components/ui/svgs/mongodb";
+import { Dynamodb } from "@/components/ui/svgs/dynamodb";
+import { Redis } from "@/components/ui/svgs/redis";
+import { Nestjs } from "@/components/ui/svgs/nestjs";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
-import { Typescript } from "@/components/ui/svgs/typescript";
-import { Nodejs } from "@/components/ui/svgs/nodejs";
-import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { Docker } from "@/components/ui/svgs/docker";
+import { Php } from "@/components/ui/svgs/php";
+import { ClaudeCode } from "@/components/ui/svgs/claudecode";
 
 export const DATA = {
   name: "Gabriel Ribeiro",
@@ -17,10 +27,20 @@ export const DATA = {
   skills: [
     { name: "Node.js", icon: Nodejs },
     { name: "TypeScript", icon: Typescript },
+    { name: "AWS", icon: Aws },
+    { name: "Cloudflare", icon: Cloudflare },
+    { name: "Docker", icon: Docker },
+    { name: "Terraform", icon: Terraform },
+    { name: "PostgreSQL", icon: Postgresql },
+    { name: "MySQL", icon: Mysql },
+    { name: "MongoDB", icon: Mongodb },
+    { name: "DynamoDB", icon: Dynamodb },
+    { name: "Redis", icon: Redis },
+    { name: "NestJS", icon: Nestjs },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
-    { name: "PostgreSQL", icon: Postgresql },
-    { name: "Docker", icon: Docker },
+    { name: "PHP", icon: Php },
+    { name: "Claude Code", icon: ClaudeCode },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
