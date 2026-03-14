@@ -68,6 +68,12 @@ export const DATA = {
         icon: Icons.x,
         navbar: true,
       },
+      Instagram: {
+        name: "Instagram",
+        url: "https://www.instagram.com/gbr.osr/",
+        icon: Icons.instagram,
+        navbar: true,
+      },
       Youtube: {
         name: "Youtube",
         url: "https://www.youtube.com/@ribeirogab",
