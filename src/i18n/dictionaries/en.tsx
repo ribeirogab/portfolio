@@ -133,38 +133,6 @@ const en: Dictionary = {
         video: "",
       },
     ],
-    hackathons: [
-      {
-        title: "FIAP Next",
-        dates: "October 2024",
-        location: "São Paulo, Brazil",
-        description: "Developed an AI-powered platform for automating restaurant menu management, integrating computer vision for dish recognition and automatic pricing suggestions.",
-        win: "2nd Place",
-        links: [],
-      },
-      {
-        title: "Hack for Change",
-        dates: "August 2024",
-        location: "São Paulo, Brazil",
-        description: "Built a real-time food waste reduction platform connecting restaurants with surplus food to local communities, using geolocation and push notifications.",
-        links: [],
-      },
-      {
-        title: "AWS Community Day Hackathon",
-        dates: "May 2023",
-        location: "São Paulo, Brazil",
-        description: "Created a serverless microservices architecture for real-time order tracking using AWS Lambda, SQS, and DynamoDB with event-driven communication patterns.",
-        links: [],
-      },
-      {
-        title: "Fatec Innovation Challenge",
-        dates: "November 2020",
-        location: "Itapetininga, Brazil",
-        description: "Developed a telemedicine scheduling platform with video call integration during the pandemic, helping local clinics digitize their appointment systems.",
-        win: "1st Place",
-        links: [],
-      },
-    ],
   },
   ui: {
     hero: { greeting: "Hi, I'm" },
@@ -176,11 +144,6 @@ const en: Dictionary = {
       badge: "My Projects",
       title: "Check out my latest work",
       description: "I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.",
-    },
-    hackathons: {
-      badge: "Hackathons",
-      title: "I like building things",
-      description: "I've attended hackathons where people come together and build incredible things in 2-3 days. It was eye-opening to see the endless possibilities brought to life by a group of motivated and passionate individuals.",
     },
     contact: {
       badge: "Contact",

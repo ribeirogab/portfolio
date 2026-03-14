@@ -33,18 +33,6 @@ export type ProjectEntry = {
   video: string;
 };
 
-export type HackathonEntry = {
-  title: string;
-  dates: string;
-  location: string;
-  description: string;
-  image?: string;
-  icon?: string;
-  mlh?: string;
-  win?: string;
-  links: { title: string; icon: ReactNode; href: string }[];
-};
-
 export type Dictionary = {
   resume: {
     description: string;
@@ -52,7 +40,6 @@ export type Dictionary = {
     work: WorkEntry[];
     education: EducationEntry[];
     projects: ProjectEntry[];
-    hackathons: HackathonEntry[];
   };
   ui: {
     hero: { greeting: string };
@@ -61,11 +48,6 @@ export type Dictionary = {
     education: { title: string };
     skills: { title: string };
     projects: {
-      badge: string;
-      title: string;
-      description: string;
-    };
-    hackathons: {
       badge: string;
       title: string;
       description: string;

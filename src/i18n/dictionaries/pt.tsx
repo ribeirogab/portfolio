@@ -133,38 +133,6 @@ const pt: Dictionary = {
         video: "",
       },
     ],
-    hackathons: [
-      {
-        title: "FIAP Next",
-        dates: "Outubro de 2024",
-        location: "São Paulo, Brasil",
-        description: "Desenvolveu uma plataforma com IA para automação de gestão de cardápios de restaurantes, integrando visão computacional para reconhecimento de pratos e sugestões automáticas de preços.",
-        win: "2º Lugar",
-        links: [],
-      },
-      {
-        title: "Hack for Change",
-        dates: "Agosto de 2024",
-        location: "São Paulo, Brasil",
-        description: "Construiu uma plataforma em tempo real para redução de desperdício alimentar, conectando restaurantes com comida excedente a comunidades locais, usando geolocalização e notificações push.",
-        links: [],
-      },
-      {
-        title: "AWS Community Day Hackathon",
-        dates: "Maio de 2023",
-        location: "São Paulo, Brasil",
-        description: "Criou uma arquitetura de microsserviços serverless para rastreamento de pedidos em tempo real usando AWS Lambda, SQS e DynamoDB com padrões de comunicação event-driven.",
-        links: [],
-      },
-      {
-        title: "Fatec Innovation Challenge",
-        dates: "Novembro de 2020",
-        location: "Itapetininga, Brasil",
-        description: "Desenvolveu uma plataforma de agendamento de telemedicina com integração de videochamadas durante a pandemia, ajudando clínicas locais a digitalizar seus sistemas de consultas.",
-        win: "1º Lugar",
-        links: [],
-      },
-    ],
   },
   ui: {
     hero: { greeting: "Olá, sou" },
@@ -176,11 +144,6 @@ const pt: Dictionary = {
       badge: "Meus Projetos",
       title: "Confira meus últimos trabalhos",
       description: "Trabalhei em uma variedade de projetos, desde sites simples até aplicações web complexas. Aqui estão alguns dos meus favoritos.",
-    },
-    hackathons: {
-      badge: "Hackathons",
-      title: "Gosto de construir coisas",
-      description: "Participei de hackathons onde pessoas se reúnem e constroem coisas incríveis em 2-3 dias. Foi inspirador ver as possibilidades infinitas trazidas à vida por um grupo de indivíduos motivados e apaixonados.",
     },
     contact: {
       badge: "Contato",
