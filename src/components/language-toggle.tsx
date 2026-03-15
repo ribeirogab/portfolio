@@ -1,40 +1,32 @@
-'use client';
+"use client";
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from "next/navigation";
+import { locales, type Locale } from "@/i18n/config";
+import { Languages } from "lucide-react";
 
-import { type Locale, locales } from '@/i18n/config';
-
-import { Button } from './ui/button';
-
-export function LanguageToggle() {
+export function LanguageToggle({ className }: { className?: string }) {
   const pathname = usePathname();
-  const router = useRouter();
 
-  const currentLang = pathname.split('/')[1] as Locale;
-  const isPortuguese = currentLang === 'pt';
+  const currentLocale = locales.find(
+    (l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`
+  ) ?? "en";
 
-  const handleLanguageSwitch = () => {
-    const segments = pathname.split('/');
+  const nextLocale: Locale = currentLocale === "en" ? "pt" : "en";
 
-    if (locales.includes(segments[1] as Locale)) {
-      segments[1] = isPortuguese ? 'en' : 'pt';
-    } else {
-      segments.unshift('', isPortuguese ? 'en' : 'pt');
-    }
+  const newPathname = pathname.replace(`/${currentLocale}`, `/${nextLocale}`);
 
-    const newPath = segments.join('/');
-    router.push(newPath);
-  };
+  function handleClick() {
+    document.cookie = `NEXT_LOCALE=${nextLocale};path=/;max-age=31536000`;
+    window.location.href = newPathname;
+  }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={handleLanguageSwitch}
-      aria-label={isPortuguese ? 'Switch to English' : 'Mudar para Português'}
-      className="bg-background/35"
+    <button
+      onClick={handleClick}
+      className={className}
+      aria-label={`Switch to ${nextLocale === "en" ? "English" : "Português"}`}
     >
-      <span className="text-sm">{isPortuguese ? 'pt' : 'en'}</span>
-    </Button>
+      <Languages className="size-full" />
+    </button>
   );
 }

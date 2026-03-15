@@ -1,337 +1,114 @@
-import { HomeIcon } from 'lucide-react';
-import Link from 'next/link';
+import type { Dictionary } from "../types";
 
-import { Icons } from '@/components/icons';
-
-import { Dictionary } from '../types/dictionary';
-
-export const pt: Dictionary = {
+const pt: Dictionary = {
   resume: {
-    name: 'Gabriel Ribeiro',
-    jobTitle: 'Engenheiro de Software',
-    initials: 'GR',
-    url: 'https://gabrielribeiro.work',
-    location: 'Tatuí - SP, Brasil',
-    locationLink: 'https://g.co/kgs/sTbLmGm',
     description:
-      'Engenheiro de Software. Escrevo código, lanço projetos e automatizo tudo que posso.',
+      "Engenheiro de Software. Escrevo código, lanço projetos e automatizo tudo que posso.",
     summary:
-      'Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios. Atuo atualmente na Goomer e tenho uma consultoria de software desde 2025, entregando soluções para projetos simples e complexos. Tenho vivência com arquiteturas serverless, integrações de assinatura e sistemas orientados a eventos. Sou entusiasta de automações, IA e boas práticas de engenharia de software.',
-    avatarUrl: '/me.jpeg',
-    skills: [
-      'Node.js',
-      'TypeScript',
-      'AWS',
-      'PostgreSQL',
-      'MySQL',
-      'MongoDB',
-      'Redis',
-      'DynamoDB',
-      'Docker',
-      'NestJS',
-      'React',
-      'Next.js',
-      'Cloudflare',
-      'PHP',
-    ],
-    navbar: [{ href: '/', icon: HomeIcon, label: 'Home' }],
-    contact: {
-      email: 'ribeirogab.work@gmail.com',
-      tel: '+5515991164345',
-      social: {
-        GitHub: {
-          name: 'GitHub',
-          url: 'https://github.com/ribeirogab',
-          icon: Icons.github,
-          navbar: true,
-        },
-        LinkedIn: {
-          name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/ribeirogab/',
-          icon: Icons.linkedin,
-          navbar: true,
-        },
-        X: {
-          name: 'X',
-          url: 'https://x.com/gbr_osr',
-          icon: Icons.x,
-          navbar: true,
-        },
-        Youtube: {
-          name: 'Youtube',
-          url: 'https://www.youtube.com/@ribeirogab',
-          icon: Icons.youtube,
-          navbar: false,
-        },
-        email: {
-          name: 'Send Email',
-          url: '#',
-          icon: Icons.email,
-          navbar: false,
-        },
-      },
-    },
+      "Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios. Atuo atualmente na [Flavia Nasser](https://flavianasser.com.br/) como Lead Software Engineer. Anteriormente na [Goomer](https://goomer.com.br/) por mais de 4 anos. Tenho vivência com arquiteturas serverless, integrações de assinatura e sistemas orientados a eventos. Sou entusiasta de automações, IA e boas práticas de engenharia de software.",
     work: [
       {
-        company: 'Goomer',
+        company: "Flavia Nasser",
+        href: "https://flavianasser.com.br/",
         badges: [],
-        location: 'Remote',
-        title: 'Engenheiro de Software',
-        logoUrl: '/goomer.jpeg',
-        start: 'ago de 2021',
-        end: 'o momento',
-        links: [
-          {
-            type: 'Website',
-            href: 'https://goomer.com.br/',
-            icon: <Icons.globe className="size-3" />,
-          },
-          {
-            type: 'LinkedIn',
-            href: 'https://www.linkedin.com/company/goomer/',
-            icon: <Icons.linkedin className="size-3" />,
-          },
-          {
-            type: 'GitHub',
-            href: 'https://github.com/goomerdev',
-            icon: <Icons.github className="size-3" />,
-          },
-          {
-            type: 'Instagram',
-            href: 'https://www.instagram.com/goomer_br/',
-            icon: <Icons.instagram className="size-3" />,
-          },
-        ],
-        description: (
-          <div className="flex flex-col gap-2">
-            <p>
-              Sou um dos pontos focais do time de back-end da empresa, liderando
-              decisões técnicas e contribuindo ativamente em definições de
-              produto. Fui um dos principais responsáveis pela fusão entre os
-              sistemas da Goomer e da Abrahão, com foco na unificação de fluxos
-              de autenticação, assinatura e gerenciamento de usuários. Atuei
-              como referência técnica nessas iniciativas, garantindo o
-              alinhamento entre times e a integridade da arquitetura.
-            </p>
-            <p>
-              Minhas responsabilidades incluem o desenvolvimento e manutenção de
-              microsserviços escaláveis, otimização de bancos de dados
-              relacionais e não-relacionais, e criação de APIs REST bem
-              documentadas. Também participo ativamente na refatoração de
-              sistemas legados, promovendo padrões modernos e melhorando
-              performance e manutenibilidade.
-            </p>
-            <p>
-              Além disso, colaborei em iniciativas internas com uso de IA
-              voltadas à automação de processos, com foco em aumentar a
-              eficiência do time de engenharia.
-            </p>
-          </div>
-        ),
+        location: "Remoto",
+        title: "Lead Software Engineer",
+        logoUrl: "/flavianasser.png",
+        start: "fev de 2026",
+        end: "o momento",
+        description:
+          "Liderando o time de engenharia, gerenciando desenvolvedores e tomando decisões técnicas junto aos stakeholders. Responsável por definir arquitetura, padrões de código e fluxos de desenvolvimento. Direcionando a estratégia de tecnologia para suportar o crescimento do negócio e a escalabilidade dos produtos.",
       },
       {
-        company: 'Zunix',
+        company: "Goomer",
+        href: "https://goomer.com.br/",
         badges: [],
-        location: 'Remote',
-        title: 'CTO',
-        logoUrl: '/zunix.png',
-        start: 'jan de 2025',
-        end: 'o momento',
-        links: [
-          {
-            type: 'Instagram',
-            href: 'https://www.instagram.com/zunix.com.br',
-            icon: <Icons.instagram className="size-3" />,
-          },
-        ],
-        description: (
-          <div className="flex flex-col gap-2">
-            <p>
-              Atuo como responsável técnico pela minha consultoria de software,
-              conduzindo todo o ciclo de vida dos projetos — desde o
-              entendimento das necessidades do cliente até o deploy em produção.
-              Participo das reuniões estratégicas, identifico dores reais de
-              negócio e proponho soluções eficientes, escaláveis e alinhadas aos
-              objetivos do cliente.
-            </p>
-            <p>
-              Sou responsável por todas as etapas técnicas: arquitetura,
-              desenvolvimento, testes, documentação e manutenção dos sistemas
-              entregues. Também contribuo na definição de escopo e orçamento,
-              garantindo viabilidade técnica e clareza nas entregas.
-            </p>
-          </div>
-        ),
+        location: "Remoto",
+        title: "Engenheiro de Software",
+        logoUrl: "/goomer.jpeg",
+        start: "ago de 2021",
+        end: "fev de 2026",
+        description:
+          "Ponto focal do time de back-end, liderando decisões técnicas e contribuindo ativamente em definições de produto. Liderou a fusão entre os sistemas da Goomer e da Abrahão, com foco na unificação de fluxos de autenticação, assinatura e gerenciamento de usuários. Desenvolveu e manteve microsserviços escaláveis, otimizou bancos de dados, criou APIs REST bem documentadas e participou na refatoração de sistemas legados. Colaborou em iniciativas internas de IA voltadas à automação de processos.",
       },
       {
-        company: 'iClouds',
+        company: "iClouds",
+        href: "#",
         badges: [],
-        location: 'Remote',
-        title: 'Engenheiro de Software',
-        logoUrl: '/iclouds.jpeg',
-        start: 'jul de 2020',
-        end: 'ago de 2021',
-        links: [
-          {
-            type: 'LinkedIn',
-            href: 'https://www.linkedin.com/company/iclouds-sw/',
-            icon: <Icons.linkedin className="size-3" />,
-          },
-        ],
-        description: (
-          <div className="flex flex-col gap-2">
-            <p>
-              Atuei com o foco em back-end, sendo responsável pela construção e
-              manutenção das principais APIs da empresa. Trabalhei também em
-              projetos front-end utilizando React, Next.js e React Native,
-              entregando interfaces modernas e bem integradas com os serviços da
-              plataforma.
-            </p>
-            <p>
-              Implementei testes unitários com TDD, organizei a arquitetura dos
-              projetos seguindo princípios como DDD, SOLID e clean code, e
-              participei do gerenciamento de bancos de dados relacionais
-              (PostgreSQL) e não relacionais (MongoDB). Além disso, contribuí na
-              padronização de projetos e organização de tarefas do time.
-            </p>
-            <p>
-              Essa experiência me deu uma base sólida em desenvolvimento web,
-              tanto no back quanto no front, e ampliou minha visão sobre boas
-              práticas e organização de software em ambientes reais de produção.
-            </p>
-          </div>
-        ),
+        location: "Remoto",
+        title: "Engenheiro de Software",
+        logoUrl: "/iclouds.jpeg",
+        start: "jul de 2020",
+        end: "ago de 2021",
+        description:
+          "Foco em back-end, construindo e mantendo as principais APIs da empresa. Também trabalhou em projetos front-end usando React, Next.js e React Native. Implementou testes unitários com TDD, organizou a arquitetura seguindo princípios como DDD, SOLID e clean code, e gerenciou bancos de dados relacionais (PostgreSQL) e não relacionais (MongoDB).",
       },
       {
-        company: 'Makertech Labs',
+        company: "Makertech Labs",
+        href: "https://www.makertechlabs.com.br/",
         badges: [],
-        location: 'Santa Clara, CA',
-        title: 'Técnico em Informática',
-        logoUrl: '/makertechlabs.jpeg',
-        start: 'ago de 2018',
-        end: 'out de 2019',
-        links: [
-          {
-            type: 'Website',
-            href: 'https://www.makertechlabs.com.br/',
-            icon: <Icons.globe className="size-3" />,
-          },
-          {
-            type: 'LinkedIn',
-            href: 'https://www.linkedin.com/company/makertech-labs/',
-            icon: <Icons.linkedin className="size-3" />,
-          },
-        ],
-        description: (
-          <div className="flex flex-col gap-2">
-            <p>
-              Atuei como técnico de informática, sendo responsável por
-              atividades que integravam tecnologia, design e marketing digital.
-              Desenvolvi e gerenciei o site institucional da empresa, além de
-              realizar o controle e manutenção dos computadores utilizados no
-              ambiente corporativo.
-            </p>
-            <p>
-              Contribuí ativamente na criação de materiais gráficos, como
-              banners, folders e displays, utilizando ferramentas como
-              Photoshop, Canva e CorelDRAW. Também fui responsável pela criação
-              e gestão de campanhas no Google Ads e pelo gerenciamento das
-              mídias sociais da empresa, alinhando a comunicação visual com os
-              objetivos estratégicos da marca.
-            </p>
-          </div>
-        ),
+        location: "Santa Clara, CA",
+        title: "Técnico em Informática",
+        logoUrl: "/makertechlabs.jpeg",
+        start: "ago de 2018",
+        end: "out de 2019",
+        description:
+          "Desenvolveu e gerenciou o site institucional da empresa. Contribuiu na criação de materiais gráficos usando Photoshop, Canva e CorelDRAW. Gerenciou campanhas no Google Ads e as redes sociais da empresa.",
       },
     ],
     education: [
       {
-        school: 'FIAP',
-        href: 'https://www.fiap.com.br/',
-        degree: 'Tecnólogo em Inteligência Artificial',
-        logoUrl: '/fiap.png',
-        start: 'ago de 2024',
-        end: 'o momento',
+        school: "FIAP",
+        href: "https://www.fiap.com.br/",
+        degree: "Tecnólogo em Inteligência Artificial",
+        logoUrl: "/fiap.png",
+        start: "ago de 2024",
+        end: "o momento",
       },
       {
-        school: 'Fatec Prof. Antonio Belizandro Barbosa Rezende',
-        href: 'https://fatecitapetininga.edu.br/',
-        degree: 'Tecnólogo em Análise e Desenvolvimento de Sistemas',
-        logoUrl: '/fatec.png',
-        start: 'ago de 2019',
-        end: 'ago de 2021',
+        school: "Fatec Prof. Antonio Belizandro Barbosa Rezende",
+        href: "https://fatecitapetininga.edu.br/",
+        degree: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        logoUrl: "/fatec.png",
+        start: "ago de 2019",
+        end: "ago de 2021",
       },
       {
-        school: 'Etec Sales Gomes',
-        href: 'https://etecsalesgomes.cps.sp.gov.br/',
-        degree: 'Técnico em Informática para Internet',
-        logoUrl: '/etec.png',
-        start: 'fev de 2018',
-        end: 'jul de 2019',
+        school: "Etec Sales Gomes",
+        href: "https://etecsalesgomes.cps.sp.gov.br/",
+        degree: "Técnico em Informática para Internet",
+        logoUrl: "/etec.png",
+        start: "fev de 2018",
+        end: "jul de 2019",
       },
     ],
     projects: [],
-    hackathons: [],
   },
   ui: {
-    // Sections
-    hero: {
-      greeting: 'Olá, sou',
-    },
-
-    about: {
-      title: 'Sobre',
-    },
-
-    work: {
-      title: 'Experiência Profissional',
-    },
-
-    education: {
-      title: 'Educação',
-    },
-
-    skills: {
-      title: 'Habilidades',
-    },
-
+    hero: { greeting: "Olá, sou" },
+    about: { title: "Sobre" },
+    work: { title: "Experiência Profissional" },
+    education: { title: "Educação" },
+    skills: { title: "Habilidades" },
     projects: {
-      title: 'Meus Projetos',
-      subtitle: 'Confira meus últimos trabalhos',
-      description:
-        'Trabalhei em uma variedade de projetos, desde sites simples até aplicativos web complexos.',
+      badge: "Meus Projetos",
+      title: "Confira meus últimos trabalhos",
+      description: "Trabalhei em uma variedade de projetos, desde sites simples até aplicações web complexas. Aqui estão alguns dos meus favoritos.",
+      viewAll: "Ver todos os projetos",
+      pageTitle: "Projetos",
+      pageDescription: "Uma coleção de projetos em que trabalhei.",
     },
-
     contact: {
-      title: 'Entre em Contato',
-      badge: 'Contato',
-      description: (dict: Dictionary) => (
-        <>
-          Quer conversar? Basta me enviar uma mensagem no{' '}
-          <Link
-            href={dict.resume.contact.social.LinkedIn.url}
-            className="accessible-link"
-          >
-            LinkedIn
-          </Link>{' '}
-          e eu responderei assim que puder. Também estou disponível no e-mail{' '}
-          <Link
-            href={`mailto:${dict.resume.contact.email}`}
-            className="accessible-link"
-          >
-            {dict.resume.contact.email}
-          </Link>
-        </>
-      ),
+      badge: "Contato",
+      title: "Entre em Contato",
+      description: "Quer conversar? Me envie um email e responderei assim que puder.",
     },
-
-    text: {
-      'view more': 'Ver mais',
-      'view less': 'Ver menos',
-      present: 'o momento',
-      location: 'Localização',
-      home: 'Home',
-      'switch language': 'Mudar idioma',
-      'switch theme': 'Mudar tema',
+    notFound: {
+      title: "Página Não Encontrada",
+      description: "A página que você está procurando não existe ou pode ter sido movida.",
+      goHome: "Ir para Home",
     },
   },
 };
+
+export default pt;
