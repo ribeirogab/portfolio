@@ -5,8 +5,20 @@ const pt: Dictionary = {
     description:
       "Engenheiro de Software. Escrevo código, lanço projetos e automatizo tudo que posso.",
     summary:
-      "Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios. Atuo atualmente na [Goomer](https://goomer.com.br/) e tenho uma consultoria de software ([Zunix](/#work)) desde 2025, entregando soluções para projetos simples e complexos. Tenho vivência com arquiteturas serverless, integrações de assinatura e sistemas orientados a eventos. Sou entusiasta de automações, IA e boas práticas de engenharia de software.",
+      "Especializado em back-end com experiência no design e construção de sistemas escaláveis e de alta performance em diferentes domínios. Atuo atualmente na [Flavia Nasser](https://flavianasser.com.br/) como Lead Software Engineer. Anteriormente na [Goomer](https://goomer.com.br/) por mais de 4 anos. Tenho vivência com arquiteturas serverless, integrações de assinatura e sistemas orientados a eventos. Sou entusiasta de automações, IA e boas práticas de engenharia de software.",
     work: [
+      {
+        company: "Flavia Nasser",
+        href: "https://flavianasser.com.br/",
+        badges: [],
+        location: "Remoto",
+        title: "Lead Software Engineer",
+        logoUrl: "/flavianasser.png",
+        start: "fev de 2026",
+        end: "o momento",
+        description:
+          "Liderando o time de engenharia, gerenciando desenvolvedores e tomando decisões técnicas junto aos stakeholders. Responsável por definir arquitetura, padrões de código e fluxos de desenvolvimento. Direcionando a estratégia de tecnologia para suportar o crescimento do negócio e a escalabilidade dos produtos.",
+      },
       {
         company: "Goomer",
         href: "https://goomer.com.br/",
@@ -15,21 +27,9 @@ const pt: Dictionary = {
         title: "Engenheiro de Software",
         logoUrl: "/goomer.jpeg",
         start: "ago de 2021",
-        end: "o momento",
+        end: "fev de 2026",
         description:
-          "Ponto focal do time de back-end, liderando decisões técnicas e contribuindo ativamente em definições de produto. Liderou a fusão entre os sistemas da Goomer e da Abrahão, com foco na unificação de fluxos de autenticação, assinatura e gerenciamento de usuários. Desenvolve e mantém microsserviços escaláveis, otimiza bancos de dados, cria APIs REST bem documentadas e participa na refatoração de sistemas legados. Colaborou em iniciativas internas de IA voltadas à automação de processos.",
-      },
-      {
-        company: "Zunix",
-        href: "#",
-        badges: [],
-        location: "Remoto",
-        title: "CTO",
-        logoUrl: "/zunix.png",
-        start: "jan de 2025",
-        end: "o momento",
-        description:
-          "Responsável técnico pela consultoria de software, conduzindo todo o ciclo de vida dos projetos — do entendimento das necessidades do cliente ao deploy em produção. Participa de reuniões estratégicas, identifica dores reais de negócio e propõe soluções eficientes e escaláveis. Responsável por arquitetura, desenvolvimento, testes, documentação e manutenção dos sistemas entregues.",
+          "Ponto focal do time de back-end, liderando decisões técnicas e contribuindo ativamente em definições de produto. Liderou a fusão entre os sistemas da Goomer e da Abrahão, com foco na unificação de fluxos de autenticação, assinatura e gerenciamento de usuários. Desenvolveu e manteve microsserviços escaláveis, otimizou bancos de dados, criou APIs REST bem documentadas e participou na refatoração de sistemas legados. Colaborou em iniciativas internas de IA voltadas à automação de processos.",
       },
       {
         company: "iClouds",

@@ -5,8 +5,20 @@ const en: Dictionary = {
     description:
       "Software Engineer. I write code, launch projects, and automate everything I can.",
     summary:
-      "Specialized in backend with experience in designing and building scalable, high-performance systems across different domains. Currently working at [Goomer](https://goomer.com.br/) and running a software consultancy ([Zunix](/#work)) since 2025, delivering solutions for simple and complex projects. Experienced with serverless architectures, subscription integrations, and event-driven systems. Enthusiast of automation, AI, and software engineering best practices.",
+      "Specialized in backend with experience in designing and building scalable, high-performance systems across different domains. Currently working at [Flavia Nasser](https://flavianasser.com.br/) as Lead Software Engineer. Previously at [Goomer](https://goomer.com.br/) for over 4 years. Experienced with serverless architectures, subscription integrations, and event-driven systems. Enthusiast of automation, AI, and software engineering best practices.",
     work: [
+      {
+        company: "Flavia Nasser",
+        href: "https://flavianasser.com.br/",
+        badges: [],
+        location: "Remote",
+        title: "Lead Software Engineer",
+        logoUrl: "/flavianasser.png",
+        start: "Feb 2026",
+        end: "Present",
+        description:
+          "Leading the engineering team, managing developers and making technical decisions alongside stakeholders. Responsible for defining architecture, code standards, and development workflows. Driving technology strategy to support business growth and product scalability.",
+      },
       {
         company: "Goomer",
         href: "https://goomer.com.br/",
@@ -15,21 +27,9 @@ const en: Dictionary = {
         title: "Software Engineer",
         logoUrl: "/goomer.jpeg",
         start: "Aug 2021",
-        end: "Present",
+        end: "Feb 2026",
         description:
-          "Key focal point of the backend team, leading technical decisions and actively contributing to product definitions. Led the merger between Goomer and Abrahão systems, focusing on unifying authentication, subscription, and user management flows. Develops and maintains scalable microservices, optimizes databases, creates well-documented REST APIs, and participates in legacy system refactoring. Collaborated on internal AI initiatives focused on process automation.",
-      },
-      {
-        company: "Zunix",
-        href: "#",
-        badges: [],
-        location: "Remote",
-        title: "CTO",
-        logoUrl: "/zunix.png",
-        start: "Jan 2025",
-        end: "Present",
-        description:
-          "Technical leader for a software consultancy, managing the entire project lifecycle — from understanding client needs to production deployment. Participates in strategic meetings, identifies real business pain points, and proposes efficient, scalable solutions. Responsible for architecture, development, testing, documentation, and maintenance of delivered systems.",
+          "Key focal point of the backend team, leading technical decisions and actively contributing to product definitions. Led the merger between Goomer and Abrahão systems, focusing on unifying authentication, subscription, and user management flows. Developed and maintained scalable microservices, optimized databases, created well-documented REST APIs, and participated in legacy system refactoring. Collaborated on internal AI initiatives focused on process automation.",
       },
       {
         company: "iClouds",
